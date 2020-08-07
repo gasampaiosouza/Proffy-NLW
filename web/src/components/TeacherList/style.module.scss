@@ -1,0 +1,54 @@
+@import '../../scss/config';
+
+.list-page {
+  width: 100% !important;
+
+  .search .button-container > button {
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .list-page {
+    max-width: 100% !important;
+
+    .search {
+      position: absolute;
+      bottom: -80%;
+      transform: translateY(-50%);
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 16px;
+
+      .button-container {
+        grid-column: 1/4;
+        width: 100%;
+        @include flex;
+
+        button {
+          width: 20rem;
+        }
+      }
+    }
+  }
+
+  .list {
+    padding: 3.2rem 0;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+}
+
+.list {
+  width: 90%;
+  margin: 8.2rem auto;
+}
+
+.empty-message {
+  text-align: center;
+  margin-top: 5rem;
+  color: $color-text-complement;
+  font-size: 1.75rem;
+}

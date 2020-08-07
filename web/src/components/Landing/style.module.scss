@@ -1,0 +1,126 @@
+@import '../../scss/config';
+
+.landing {
+  width: 100vw;
+  height: 100vh;
+
+  @include flex;
+
+  color: $color-text-in-primary;
+  background: $color-primary;
+
+  &-text {
+    text-align: center;
+    margin-bottom: 3.2rem;
+
+    .logo {
+      height: 10rem;
+    }
+
+    .text {
+      font-size: 2.4rem;
+      line-height: 4.6rem;
+      margin-top: 0.8rem;
+      color: $color-text-in-primary;
+    }
+  }
+
+  &-image {
+    width: 100%;
+  }
+
+  &-buttons {
+    @include flex;
+    margin: 3.2rem 0;
+
+    a {
+      text-decoration: none;
+      color: $color-button-text;
+
+      width: 30rem;
+      height: 10.4rem;
+      border-radius: 0.8rem;
+
+      font: 700 2rem $font-secondary;
+
+      @include flex;
+      transition: 0.2s ease-in-out;
+
+      &:first-child {
+        margin-right: 1.6rem;
+      }
+
+      > img {
+        margin-right: 2rem;
+      }
+
+      &.study {
+        background: $color-primary-lighter;
+
+        &:hover {
+          background: $color-primary-light;
+        }
+      }
+
+      &.teach {
+        background: $color-secondary;
+
+        &:hover {
+          background: $color-secondary-dark;
+        }
+      }
+    }
+  }
+
+  .connections {
+    color: $color-text-in-primary;
+    font-size: 1.8rem;
+    @include flex;
+
+    > img {
+      margin-left: 0.8rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    &-content {
+      max-width: 1100px !important;
+
+      display: grid;
+      grid-template-rows: 350px 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas:
+        'logo image image'
+        'btn btn connections';
+    }
+
+    .connections {
+      grid-area: connections;
+      justify-self: end;
+      font-size: 1.25rem;
+    }
+
+    &-buttons {
+      grid-area: btn;
+      justify-content: flex-start;
+    }
+
+    &-image {
+      grid-area: image;
+      justify-self: end;
+    }
+
+    &-text {
+      text-align: left;
+
+      &.logo {
+        grid-area: logo;
+        height: 100%;
+      }
+
+      .text {
+        font-size: 3.6rem;
+      }
+    }
+  }
+}

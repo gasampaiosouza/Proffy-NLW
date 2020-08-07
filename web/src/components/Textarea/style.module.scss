@@ -1,0 +1,53 @@
+@import '../../scss/config';
+
+.textarea-container {
+  position: relative;
+  margin: 3.2rem 0;
+
+  > label {
+    color: $color-text-complement;
+    font-size: 1.4rem;
+
+    .desc {
+      color: inherit;
+      opacity: 0.75;
+      font-size: 1.2rem;
+      margin-left: 0.8rem;
+    }
+  }
+
+  > textarea {
+    width: 100% !important;
+    min-height: 16rem;
+    max-height: 30rem;
+
+    margin-top: 0.8rem;
+
+    border: 1px solid $color-line-in-white;
+    border-radius: 10px;
+    outline: 0;
+
+    background: $color-input-background;
+    padding: 1.2rem 1.6rem;
+    resize: vertical;
+    font: 1.6rem $font-secondary;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+
+    background: $color-primary-light;
+    right: 1.6rem;
+    bottom: 2px;
+
+    transition: width 0.2s ease-in-out;
+  }
+
+  &:focus-within::after {
+    left: 1.6rem;
+    width: calc(100% - 3.2rem);
+  }
+}

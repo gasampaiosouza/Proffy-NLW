@@ -1,0 +1,52 @@
+@import 'config';
+
+:root {
+  font-size: 60%;
+
+  @media (min-width: 700px) {
+    font-size: 62.5%;
+  }
+}
+
+*,
+input,
+button,
+textarea {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 500 1.6rem $font-primary;
+  color: $color-text-base;
+}
+
+body {
+  background: $color-background;
+  // font-size: 16px;
+
+  .container {
+    width: 90vw;
+    max-width: 700px;
+  }
+}
+
+.btn {
+  cursor: pointer;
+
+  width: 20rem;
+  height: 5.6rem;
+  background: $color-secondary;
+  color: $color-button-text;
+  border: none;
+  border-radius: 10px;
+  font: 700 1.4rem $font-secondary;
+
+  @include flex {
+    justify-content: space-evenly;
+  }
+
+  transition: 0.2s;
+
+  &:hover {
+    background: $color-secondary-dark;
+  }
+}

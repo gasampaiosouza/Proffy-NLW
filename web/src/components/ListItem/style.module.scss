@@ -1,0 +1,90 @@
+@import '../../scss/config';
+
+.list-item {
+  background: $color-box-base;
+  border: 1px solid $color-line-in-white;
+  border-radius: 10px;
+  margin-top: 2.4rem;
+  overflow: hidden;
+
+  .user {
+    padding: 3.2rem 2rem;
+    @include flex {
+      justify-content: initial;
+    }
+
+    &-image {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+    }
+
+    &-info {
+      margin-left: 2.4rem;
+
+      > strong {
+        font: 700 2.4rem $font-secondary;
+        display: block;
+        color: $color-text-title;
+      }
+
+      > span {
+        display: block;
+        font-size: 1.6rem;
+        margin-top: 0.4rem;
+      }
+    }
+
+    &-description {
+      padding: 0 2rem;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  footer {
+    padding: 3.2rem 2rem;
+    background: $color-box-footer;
+    border-top: 1px solid $color-line-in-white;
+    margin-top: 3.2rem;
+
+    @include flex {
+      justify-content: space-between;
+    }
+
+    .price strong {
+      color: $color-primary;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .list-item {
+    header,
+    footer {
+      padding: 3.2rem;
+    }
+
+    > p {
+      padding: 0 3.2rem;
+    }
+
+    .price {
+      display: flex;
+
+      strong {
+        margin-left: 1.6rem;
+      }
+    }
+    button {
+      width: 245px;
+      font-size: 1.6rem;
+      justify-content: center;
+
+      > img {
+        margin-right: 1.4rem;
+      }
+    }
+  }
+}

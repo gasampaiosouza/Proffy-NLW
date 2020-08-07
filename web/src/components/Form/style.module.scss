@@ -1,0 +1,113 @@
+@import '../../scss/config';
+
+.form-page {
+  .header-content {
+    margin-bottom: 6.4rem;
+  }
+
+  main {
+    background: $color-box-base;
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 10px;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    overflow: hidden;
+
+    fieldset {
+      border: 0;
+      padding: 0 2.4rem;
+
+      & + fieldset {
+        margin-top: 6.4rem;
+      }
+    }
+
+    legend {
+      width: 100%;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid $color-line-in-white;
+      font: 700 2.4rem $font-secondary;
+      color: $color-text-title;
+      margin-bottom: 2.4rem;
+
+      // just to work on firefox
+      > div {
+        @include flex {
+          justify-content: space-between;
+        }
+
+        button {
+          cursor: pointer;
+          background: transparent;
+          border: none;
+          color: $color-primary;
+          font: 700 1.6rem $font-secondary;
+          transition: color 0.2s ease-in-out;
+
+          &:hover {
+            color: $color-primary-dark;
+          }
+        }
+      }
+    }
+
+    footer {
+      padding: 4rem 2.4rem;
+      background: $color-box-footer;
+      border-top: 1px solid $color-line-in-white;
+      margin-top: 6.4rem;
+
+      > p {
+        @include flex;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: $color-text-complement;
+      }
+
+      img {
+        margin-right: 2rem;
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 3.2rem;
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    .header-content {
+      margin-bottom: 0;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 2fr repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    > main {
+      fieldset {
+        padding: 0 6.4rem;
+      }
+
+      footer {
+        padding: 4rem 6.4rem;
+
+        @include flex {
+          justify-content: space-between;
+        }
+
+        p {
+          justify-content: space-between;
+        }
+
+        .btn {
+          width: 20rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
